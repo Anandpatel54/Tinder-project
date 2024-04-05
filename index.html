@@ -19,17 +19,13 @@
     <div
       class="w-full h-screen bg-black font-['Exalted DEMO Personal Use Only']"
     >
-      <div class="imagecontainer w-full h-screen relative">
-        <div class="maincard z-[3] w-full absolute h-screen bg-orange-600">
-          <img
-            class="w-full h-full object-cover"
-            src="https://images.unsplash.com/photo-1556755211-76b514756669?q=80&w=2307&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
+      <div class="imagecontainer w-full h-screen relative overflow-hidden">
+        <div class="maincard z-[3] w-[130%] h-[130%] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute h-screen">
+          <img class="w-full h-full object-cover" src="" alt=""/>
         </div>
-        <div
-          class="incomingcard z-[2] w-full h-screen absolute bg-green-600"
-        ></div>
+        <div class="incomingcard z-[2] w-[130%] h-[130%] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute">
+          <img class="w-full h-full object-cover" src="" alt=""/>
+        </div>
       </div>
       <div
         class="absolute top-0 left-0 z-[4] w-full h-screen flex flex-col justify-between"
@@ -38,13 +34,10 @@
           class="navbar flex items-center justify-between px-5 py-6 text-white"
         >
           <div
-            class="prflimg w-[3rem] h-[3rem] rounded-full bg-red-600 overflow-hidden"
+            class="prflimg w-[3rem] h-[3rem] rounded-full overflow-hidden"
           >
             <img
-              class="w-full h-full object-cover"
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-            />
+              class="w-full h-full object-cover"src="" alt=""/>
           </div>
           <h3 class="text-2xl font-medium tracking-tighter">They Liked You</h3>
           <div
@@ -54,56 +47,38 @@
             <div
               class="badge flex items-center justify-center rounded-full absolute top-0 right-0 -translate-y-[5px] translate-x-[3px] w-5 h-5 bg-red-600"
             >
-              <h5 class="text-xs font-[400]">5</h5>
+              <h5 class="text-xs font-[400]"></h5>
             </div>
           </div>
         </div>
         <div class="detailscontainer w-full">
           <div class="details w-full px-5 py-6">
-            <div class="flex gap-4">
+            <div class="element location flex gap-4">
               <i
                 class="w-[1.6rem] h-[1.6rem] flex items-center justify-center font-semibold rounded-full bg-white ri-corner-left-up-line"
               ></i>
-              <h3 class="text-white">USA, California</h3>
+              <h3 class="text-white"></h3>
             </div>
-            <div class="flex gap-5 text-white mt-1">
-              <h1 class="text-6xl font-regular tracking-tighter">Victoria</h1>
+            <div class="element name flex gap-5 text-white mt-1">
+              <h1 class="text-6xl font-regular tracking-tighter"></h1>
               <h1 class="text-6xl font-regular tracking-tighter opacity-30">
-                20
+      
               </h1>
             </div>
-            <div class="tags flex gap-3 text-white mt-4">
-              <div
-                class="tag flex items-center bg-white/30 px-3 py-1 rounded-full gap-3"
-              >
-                <i class="text-sm ri-music-2-fill"></i>
-                <h3 class="text-sm tracking-tighter">Music</h3>
-              </div>
-              <div
-                class="tag flex items-center bg-white/30 px-3 py-1 rounded-full gap-3"
-              >
-                <i class="text-sm ri-music-2-fill"></i>
-                <h3 class="text-sm tracking-tighter">Music</h3>
-              </div>
-              <div
-                class="tag flex items-center bg-white/30 px-3 py-1 rounded-full gap-3"
-              >
-                <i class="text-sm ri-music-2-fill"></i>
-                <h3 class="text-sm tracking-tighter">Music</h3>
-              </div>
+            <div class="element tags flex gap-3 text-white mt-4">
+              
             </div>
-            <div class="bio text-white/80 mt-5">
+            <div class="element bio text-white/80 mt-5">
               <h3 class="text-xl">Bio</h3>
               <p class="text-lg mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate delectus dolor eveniet sequi sed blanditiis
+               
               </p>
             </div>
-            <div class="flex items-start mt-8 gap-1">
-              <button class="py-2 w-1/2 rounded-xl bg-white">
+            <div class="element flex items-start mt-8 gap-1">
+              <button class="deny py-2 w-1/2 rounded-xl bg-white">
                 <i class="text-2xl ri-close-line"></i>
               </button>
-              <button class="py-2 w-1/2 rounded-xl bg-[#FC5149]">
+              <button class="accept py-2 w-1/2 rounded-xl bg-[#FC5149]">
                 <i class="text-2xl text-white ri-heart-3-fill"></i>
               </button>
             </div>
@@ -111,5 +86,8 @@
         </div>
       </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
   </body>
 </html>
