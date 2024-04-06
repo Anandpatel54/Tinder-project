@@ -3,10 +3,10 @@ let users = [
     profilePic:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",
     displayPic:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://source.unsplash.com/1600x900/?girls",
     pendingMessage: 4,
     location: "Delhi India",
-    name: "Uma",
+    name: "Nishi",
     age: 24,
     interests: [
       {
@@ -18,14 +18,14 @@ let users = [
         interest: "Writing",
       },
     ],
-    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptate delectus dolor eveniet sequi sed blanditiis",
+    bio: "I Love modling..!",
     isFriend: null,
   },
   {
     profilePic:
       "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     displayPic:
-      "https://images.unsplash.com/photo-1520341280432-4749d4d7bcf9?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://source.unsplash.com/1600x900/?fitness",
     pendingMessage: 7,
     location: "mumbai India",
     name: "Ankush",
@@ -40,14 +40,14 @@ let users = [
         interest: "Writing",
       },
     ],
-    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptate delectus dolor eveniet sequi sed blanditiis",
+    bio: "The weights in this gym just aren’t heavy enough… would you mind sitting on my face while I do some crunches..!",
     isFriend: null,
   },
   {
     profilePic:
       "https://images.unsplash.com/photo-1540174401473-df5f1c06c716?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     displayPic:
-      "https://plus.unsplash.com/premium_photo-1674069720020-41e6dea32366?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://source.unsplash.com/1600x900/?photography",
     pendingMessage: 1,
     location: "bhopal India",
     name: "Aditi",
@@ -62,14 +62,14 @@ let users = [
         interest: "Writing",
       },
     ],
-    bio: "Lorem ipsum dolor sit amet.Voluptate delectus dolor eveniet sequi sed blanditiis",
+    bio: "So a line can be a fallen tree, a moving river, or even a slew of rocks leading off into the distance.",
     isFriend: null,
   },
   {
     profilePic:
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",
     displayPic:
-      "https://images.unsplash.com/photo-1579591919791-0e3737ae3808?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8",
+      "https://source.unsplash.com/1600x900/?virat",
     pendingMessage: 9,
     location: "Indore India",
     name: "ayushi",
@@ -84,7 +84,7 @@ let users = [
         interest: "Writing",
       },
     ],
-    bio: "dolor sit amet consectetur adipisicing elit.Voluptate delectus dolor eveniet sequi sed blanditiis",
+    bio: "I took a walk in the woods and came out taller than the trees.!",
     isFriend: null,
   },
 ];
@@ -95,18 +95,16 @@ function select(elem) {
 
 let curr = 0;
 let isAnimating = false;
-(function setInitial() {
-  select(".maincard img").src = users[curr].displayPic;
-  select(".incomingcard img").src = users[curr + 1]?.displayPic;
 
-  select(".prflimg img").src = users[curr].profilePic;
-  select(".badge h5").textContent = users[curr].pendingMessage;
-  select(".location h3").textContent = users[curr].location;
-  select(".name h1:nth-child(1)").textContent = users[curr].name;
-  select(".name h1:nth-child(2)").textContent = users[curr].age;
+function setData(index){
+  select(".prflimg img").src = users[index].profilePic;
+  select(".badge h5").textContent = users[index].pendingMessage;
+  select(".location h3").textContent = users[index].location;
+  select(".name h1:nth-child(1)").textContent = users[index].name;
+  select(".name h1:nth-child(2)").textContent = users[index].age;
 
   let clutter = "";
-  users[curr].interests.forEach(function (interest) {
+  users[index].interests.forEach(function (interest) {
     clutter += ` <div class="tag flex items-center bg-white/30 px-3 py-1 rounded-full gap-3">
      ${interest.icon}
     <h3 class="text-sm tracking-tighter ">${interest.interest}</h3>
@@ -114,9 +112,15 @@ let isAnimating = false;
   });
   select(".tags").innerHTML = clutter;
 
-  select(".bio p").textContent = users[curr].bio;
+  select(".bio p").textContent = users[index].bio;
+}
+(function setInitial() {
+  select(".maincard img").src = users[curr].displayPic;
+  select(".incomingcard img").src = users[curr + 1]?.displayPic;
+  
+  setData(curr)
 
- // curr = 2;
+  curr = 2;
 })();
 
 function imageChange() {
@@ -175,22 +179,35 @@ let accept = select(".accept");
 
 deny.addEventListener("click", () => {
   imageChange();
+  setData(curr-1)
+  gsap.from(".details .element", {
+    y: "100%",
+    opacity: 0,
+    stagger: .06,
+    ease: Power4.easeInOut,
+    duration: 1.5,
+  });
+});
+
+accept.addEventListener("click", () => {
+  imageChange();
+  setData(curr-1)
+  gsap.from(".details .element", {
+    y: "100%",
+    opacity: 0,
+    stagger: .06,
+    ease: Power4.easeInOut,
+    duration: 1.5,
+  });
 });
 
 (function containerCreateor() {
   document.querySelectorAll(".element").forEach(function (element) {
     let div = document.createElement("div");
-    div.classList.add(`${element.classList[1]}container`);
+    div.classList.add(`${element.classList[1]}container`, 'overflow-hidden');
     div.appendChild(element);
     select(".details").appendChild(div);
-    console.log(div);
   });
 })();
 
-gsap.from(".details .element", {
-  y: "100%",
-  opacity: 0,
-  stagger: 0.1,
-  ease: Circ,
-  duration: 1,
-});
+
